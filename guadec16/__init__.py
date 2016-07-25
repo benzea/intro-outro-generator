@@ -103,16 +103,17 @@ def outroFrames(p):
 #matrix(1.1478962,0,0,1.1478962,-974.48807,-78.402379)
 #matrix(1.5838009,0,0,1.5838009,-3846.6634,-309.48307)
 #matrix(1.638289,0,0,1.638289,-4205.6854,-338.36816)
-        a1 =easeLinear(i,     1.0, 1.638289, frames-1)
-        b1 =easeLinear(i,     0.0, 0.0, frames-1)
-        c1 =easeLinear(i,     0.0, 0.0, frames-1)
-        d1 =easeLinear(i,     1.0, 1.638289, frames-1)
-        e1 =easeLinear(i, 0.0, -4205.6854, frames-1)
-        f1 =easeLinear(i, 0.0, -338.36816, frames-1)
+        scale =easeLinear(i, 1.0, 1.638289, frames-1)
+        #b1 =easeLinear(i,     0.0, 0.0, frames-1)
+        #c1 =easeLinear(i,     0.0, 0.0, frames-1)
+        #d1 =easeLinear(i,     1.0, 1.638289, frames-1)
+        #e1 =easeLinear(i, 0.0, -4205.6854, frames-1)
+        #f1 =easeLinear(i, 0.0, -338.36816, frames-1)
         yield (
+            ('guadeclogoscale', 'attr', 'transform', 'scale({scale},{scale})'.format(scale=scale),),
             #('group-transform', 'attr',     'translate', 'translate(-560.16939,1.7212031)',),
             #('guadeclogo', 'attr',    'opacity', "%.4f" % easeLinear(i, 0, 1, frames-1)),
-            ('guadeclogo', 'attr',     'transform', 'matrix({a}, {b}, {c}, {d}, {e}, {f})'.format(a=a1, b=b1, c=c1, d=d1, e=e1, f=f1,)) ,
+            #('guadeclogo', 'attr',     'transform', 'matrix({a}, {b}, {c}, {d}, {e}, {f})'.format(a=a1, b=b1, c=c1, d=d1, e=e1, f=f1,)) ,
             #('guadec-logo, 'attr',     'transform', 'matrix({scalefac}, 0, 0, {scalefac}, {calcx}, {calcy})'.format(scalefac=scalenumber,calcx=scalenumber*560.16939,calcy=scalenumber*-1.7212031)) ,
             #   ('group-transform', 'attr',     'translate', 'translate(560.16939,-1.7212031)',),
         )
